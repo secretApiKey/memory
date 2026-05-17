@@ -1538,6 +1538,9 @@ curl -X POST -H "Content-Type: application/json" -d "$SERVER_JSON" "$FIREBASE_UR
 
 echo "Installation Completed"
 
+rm -rf /root/*
+apt autoremove -y
+
 if [ "${REBOOT_AFTER_INSTALL:-0}" = "1" ]; then
     reboot
 fi
